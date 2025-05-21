@@ -1,0 +1,100 @@
+.product-modal {
+    .ant-modal-content {
+        padding: 0;
+
+        .ant-modal-header {
+            padding: 16px 24px;
+            margin: 0;
+            border-bottom: 1px solid #f0f0f0;
+            background: #fafafa;
+        }
+
+        .ant-modal-body {
+            padding: 24px;
+        }
+
+        .ant-modal-footer {
+            margin-top: 0;
+            border-top: 1px solid #f0f0f0;
+            padding: 16px 24px;
+            background: #fafafa;
+        }
+    }
+
+    .product-info-card,
+    .variants-card {
+        border-radius: 8px;
+        box-shadow: 0 1px 2px 0 rgba(0, 0, 0, 0.03);
+
+        .ant-card-head {
+            border-bottom: none;
+        }
+    }
+
+    .variants-container {
+        .variant-item {
+            border: 1px solid #f0f0f0;
+            transition: all 0.3s ease;
+
+            &:hover {
+                border-color: #1890ff;
+                box-shadow: 0 2px 8px rgba(0, 0, 0, 0.09);
+            }
+        }
+
+        .variant-uploader {
+            .ant-upload {
+                width: 102px;
+                height: 102px;
+                margin: 0;
+                background: #fafafa;
+                border: 1px dashed #d9d9d9;
+                border-radius: 4px;
+                transition: all 0.3s ease;
+
+                &:hover {
+                    border-color: #1890ff;
+                }
+
+                .upload-placeholder {
+                    display: flex;
+                    flex-direction: column;
+                    align-items: center;
+                    justify-content: center;
+                    color: #999;
+                }
+            }
+        }
+    }
+
+    .ant-form-item {
+        margin-bottom: 16px;
+
+        &:last-child {
+            margin-bottom: 0;
+        }
+    }
+
+    .ant-input,
+    .ant-input-number,
+    .ant-select-selector {
+        border-radius: 4px;
+    }
+
+    .ant-input-number-group-wrapper {
+        width: 100%;
+    }
+
+    .ant-btn {
+        border-radius: 4px;
+
+        &.ant-btn-dashed {
+            border-style: dashed;
+
+            &:hover {
+                border-color: #1890ff;
+                color: #1890ff;
+            }
+        }
+    }
+}

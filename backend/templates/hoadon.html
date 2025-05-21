@@ -1,0 +1,186 @@
+<!doctype html>
+<html lang="vi">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Hóa Đơn</title>
+    <style>
+      body {
+        font-family: Arial, sans-serif;
+        max-width: 800px;
+        margin: 0 auto;
+        padding: 20px;
+        line-height: 1.6;
+      }
+      .header,
+      .footer {
+        text-align: center;
+        margin-bottom: 10px;
+      }
+      .header h1 {
+        margin: 0;
+        font-size: 1.2em;
+        font-weight: bold;
+      }
+      .header p,
+      .footer p {
+        margin: 0;
+      }
+      .title {
+        text-align: center;
+        font-weight: bold;
+        font-size: 1.5em;
+        margin-top: 20px;
+        margin-bottom: 20px;
+      }
+
+      .table-container {
+        width: 100%;
+        border-collapse: collapse;
+        margin-top: 10px;
+      }
+      .table-container,
+      .table-container th,
+      .table-container td {
+        border: 1px solid black;
+        padding: 5px;
+        text-align: left;
+      }
+      .signature-section {
+        display: flex;
+        justify-content: space-between;
+        margin-top: 40px;
+      }
+      .signature-section div {
+        text-align: center;
+        font-style: italic;
+      }
+      .right {
+        text-align: right;
+      }
+
+      .section {
+        display: table;
+        width: 100%;
+        margin-bottom: 10px;
+      }
+
+      .row {
+        display: table-row;
+      }
+
+      .label {
+        display: table-cell;
+        padding-right: 10px;
+        white-space: nowrap;
+        width: 1%;
+      }
+
+      .value {
+        display: table-cell;
+        width: auto;
+      }
+
+      .dotted {
+        border-bottom: 1px dotted #000;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="header">
+      <h1>PHÒNG KHÁM DA LIỄU HỒNG ĐỨC</h1>
+      <p>Số 58 Nguyễn Hoàng - Mỹ Đình 2 - Nam Từ Liêm - TP. Hà Nội</p>
+      <p>Điện thoại: (024) 66813636 – 0919 268 662</p>
+      <p>
+        Email:
+        <a href="mailto:dalieuhongduc@gmail.com">dalieuhongduc@gmail.com</a>
+      </p>
+    </div>
+
+    <div class="right">Mã hóa đơn: {{code}}</div>
+
+    <div class="title">HÓA ĐƠN</div>
+
+    <div class="section">
+      <div class="row">
+        <div class="label">Họ và tên:</div>
+        <div class="value dotted">{{full_name}}</div>
+        <div class="label">Giới tính:</div>
+        <div class="value dotted">{{gender}}</div>
+      </div>
+      <div class="row">
+        <div class="label">Số điện thoại:</div>
+        <div class="value dotted">{{phone}}</div>
+        <div class="label">Ngày sinh:</div>
+        <div class="value dotted">{{birthday}}</div>
+      </div>
+      <div class="row">
+        <div class="label">Địa chỉ:</div>
+        <div class="value dotted">{{address}}</div>
+      </div>
+
+      <div class="row">
+        <div class="label">Số tiền:</div>
+        <div class="value dotted">{{total_amount}}</div>
+      </div>
+      <div class="row">
+        <div class="label">Bằng chữ:</div>
+        <div class="value dotted">{{total_amount_text}}</div>
+      </div>
+    </div>
+
+    <div class="section">
+      <table class="table-container">
+        <tr>
+          <th>STT</th>
+          <th>Tên dịch vụ</th>
+          <th>Giá</th>
+          <th>Thành tiền</th>
+        </tr>
+        {{#each services}}
+        <tr>
+          <td>{{increment @index}}</td>
+          <td>{{this.name}}</td>
+          <td>{{this.price}}</td>
+          <td>{{this.amount}}</td>
+        </tr>
+        {{/each}}
+      </table>
+    </div>
+
+    {{#if is_lieu_trinh}}
+    <div class="section">
+      <table class="table-container">
+        <tr>
+          <th>STT</th>
+          <th>Tên liệu trình</th>
+          <th>Số lượng</th>
+          <th>Giá</th>
+          <th>Thành tiền</th>
+        </tr>
+        {{#each lieutrinh}}
+        <tr>
+          <td>{{increment @index}}</td>
+          <td>{{this.name}}</td>
+          <td>{{this.quantity}}</td>
+          <td>{{this.price}}</td>
+          <td>{{this.amount}}</td>
+        </tr>
+        {{/each}}
+      </table>
+    </div>
+    {{/if}}
+
+    <div class="signature-section">
+      <div>
+        <p>Người nộp</p>
+        <p>(Ký và ghi rõ họ tên)</p>
+      </div>
+      <div class="right">
+        <p>Hà Nội, Ngày {{ngay}} tháng {{thang}} năm {{nam}}</p>
+        <p>Người thu</p>
+        <p>(Ký và ghi rõ họ tên)</p>
+      </div>
+    </div>
+  </body>
+</html>

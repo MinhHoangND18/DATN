@@ -1,0 +1,135 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Phiếu Đăng Ký Khám Bệnh</title>
+    <style>
+      body {
+        font-family: Arial, sans-serif;
+      }
+
+      .container {
+        width: 630px;
+        margin: 0 auto;
+        padding: 20px;
+      }
+
+      .header {
+        display: flex;
+        justify-content: space-between;
+        margin-bottom: 20px;
+      }
+
+      .header .left p,
+      .header .right p {
+        margin: 2px 0;
+      }
+
+      .title {
+        text-align: center;
+        font-size: 20px;
+        font-weight: bold;
+        margin: 20px 0;
+      }
+
+      .subtitle {
+        text-align: center;
+        font-weight: bold;
+        margin: 5px 0;
+      }
+
+      .section {
+        margin-bottom: 20px;
+      }
+
+      .row {
+        display: table;
+        width: 100%;
+        margin-bottom: 5px;
+      }
+
+      .label {
+        display: table-cell;
+        padding-right: 10px;
+        white-space: nowrap;
+        width: 1%;
+      }
+
+      .value {
+        display: table-cell;
+        width: auto;
+      }
+
+      .dotted {
+        border-bottom: 1px dotted #000;
+        display: inline-block;
+        width: 100%;
+      }
+
+      .note {
+        text-align: center;
+        font-style: italic;
+        margin-top: 20px;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="container">
+      <div class="header">
+        <div class="left">
+          <p><strong>PHÒNG KHÁM DA LIỄU HỒNG ĐỨC</strong></p>
+          <p>Số 58 Nguyễn Hoàng - Mỹ Đình 2 - Nam Từ Liêm - TP. Hà Nội</p>
+          <p>Điện thoại: (024) 66813636 – 0919 268 662</p>
+          <p>
+            Email:
+            <a href="mailto:dalieuhongduc@gmail.com">dalieuhongduc@gmail.com</a>
+          </p>
+        </div>
+        <div class="right">
+          <p>Mã phiếu khám: {{code}}</p>
+        </div>
+      </div>
+
+      <h2 class="title">PHIẾU ĐĂNG KÝ KHÁM BỆNH</h2>
+      <h4 class="subtitle">HỌ TÊN BỆNH NHÂN: {{full_name}}</h4>
+
+      <div class="section">
+        <div class="row">
+          <div class="label">Ngày sinh:</div>
+          <div class="value dotted">{{birthday}}</div>
+          <div class="label">Giới tính:</div>
+          <div class="value dotted">{{gender}}</div>
+        </div>
+        <div class="row">
+          <div class="label">Địa chỉ:</div>
+          <div class="value dotted">{{address}}</div>
+        </div>
+        <div class="row">
+          <div class="label">Mã BN:</div>
+          <div class="value dotted">{{id}}</div>
+        </div>
+        <div class="row">
+          <div class="label">Ngày đăng ký:</div>
+          <div class="value dotted">{{appointment_date}}</div>
+        </div>
+        <div class="row">
+          <div class="label">Dịch vụ khám:</div>
+          <div class="value dotted">{{dichvukham}}</div>
+        </div>
+        <div class="row">
+          <div class="label">Giá:</div>
+          <div class="value dotted">{{price}}</div>
+        </div>
+        <div class="row">
+          <div class="label">Người lập:</div>
+          <div class="value dotted">{{create_by}}</div>
+        </div>
+      </div>
+
+      <p class="note">
+        <b>Người bệnh giữ lại phiếu này đến khi kết thúc khám!</b>
+      </p>
+    </div>
+  </body>
+</html>

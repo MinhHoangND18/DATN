@@ -1,0 +1,33 @@
+version: '3.6'
+
+services:
+  database:
+    container_name: database_doan
+    image: postgres:13.6-alpine
+    restart: always
+    environment:
+      TZ: 'Asia/Ho_Chi_Minh'
+      PGTZ: 'Asia/Ho_Chi_Minh'
+      POSTGRES_USER: ducnm
+      POSTGRES_PASSWORD: 462001
+      POSTGRES_DB: dev
+    # command: postgres -c 'config_file=/etc/postgresql/postgresql.conf'
+    ports:
+      - 5432:5432
+    volumes:
+      - ./database/data/:/var/lib/postgresql/data
+
+  ai-service:
+    container_name: ai_service_doan
+    build:
+      context: ./AI
+      dockerfile: Dockerfile
+    ports:
+      - '5000:5000'
+    volumes:
+      - ./AI:/app
+      - ./data:/app/data
+    environment:
+      - FLASK_APP=app.py
+      - FLASK_ENV=development
+    restart: unless-stopped

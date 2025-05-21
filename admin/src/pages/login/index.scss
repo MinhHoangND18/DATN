@@ -1,0 +1,110 @@
+.login-page {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
+  position: relative;
+  overflow: hidden;
+
+  &::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: url('/socks-pattern.png') repeat;
+    opacity: 0.1;
+    z-index: 0;
+  }
+
+  .login-card {
+    position: relative;
+    z-index: 1;
+    width: 420px;
+    background: rgba(255, 255, 255, 0.95);
+    border-radius: 12px;
+    padding: 40px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+    backdrop-filter: blur(10px);
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    transition: transform 0.3s ease;
+
+    &:hover {
+      transform: translateY(-5px);
+    }
+
+    .logo-container {
+      text-align: center;
+      margin-bottom: 30px;
+
+      img {
+        width: 120px;
+        height: auto;
+      }
+    }
+
+    h2 {
+      color: #2c3e50;
+      font-weight: 600;
+      margin-bottom: 30px;
+      text-align: center;
+      font-size: 24px;
+      position: relative;
+
+      &::after {
+        content: '';
+        position: absolute;
+        bottom: -10px;
+        left: 50%;
+        transform: translateX(-50%);
+        width: 50px;
+        height: 3px;
+        background: #3498db;
+        border-radius: 3px;
+      }
+    }
+
+    .ant-form-item {
+      margin-bottom: 24px;
+
+      .ant-form-item-label {
+        label {
+          color: #2c3e50;
+          font-weight: 500;
+        }
+      }
+
+
+
+      .ant-input-password {
+        height: 40px;
+        border-radius: 8px;
+        border: 1px solid #e0e0e0;
+        padding: 8px 16px;
+        transition: all 0.3s;
+
+        &:hover,
+        &:focus {
+          border-color: #3498db;
+          box-shadow: 0 0 0 2px rgba(52, 152, 219, 0.2);
+        }
+      }
+    }
+
+    .ant-btn {
+      height: 42px;
+      border-radius: 8px;
+      font-weight: 500;
+      transition: all 0.3s;
+      background: #3498db;
+      border: none;
+
+      &:hover {
+        background: #2980b9;
+        transform: translateY(-2px);
+      }
+    }
+  }
+}

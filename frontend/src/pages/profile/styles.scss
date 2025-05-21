@@ -1,0 +1,129 @@
+.profile-page {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 24px;
+
+    .profile-card {
+        text-align: center;
+        height: 100%;
+
+        .avatar-section {
+            margin-bottom: 24px;
+
+            .avatar-wrapper {
+                position: relative;
+                display: inline-block;
+                margin-bottom: 16px;
+
+                .profile-avatar {
+                    width: 120px;
+                    height: 120px;
+                    border: 2px solid #f0f0f0;
+                    transition: all 0.3s;
+                }
+
+                .avatar-upload {
+                    position: absolute;
+                    top: 0;
+                    left: 0;
+                    width: 100%;
+                    height: 100%;
+                    cursor: pointer;
+
+                    .avatar-overlay {
+                        position: absolute;
+                        top: 0;
+                        left: 0;
+                        width: 100%;
+                        height: 100%;
+                        background: rgba(0, 0, 0, 0.5);
+                        display: flex;
+                        flex-direction: column;
+                        align-items: center;
+                        justify-content: center;
+                        opacity: 0;
+                        transition: all 0.3s;
+                        border-radius: 50%;
+                        color: white;
+
+                        .camera-icon {
+                            font-size: 24px;
+                            margin-bottom: 4px;
+                        }
+
+                        span {
+                            font-size: 12px;
+                        }
+                    }
+
+                    &:hover .avatar-overlay {
+                        opacity: 1;
+                    }
+                }
+
+                .uploading-overlay {
+                    position: absolute;
+                    top: 0;
+                    left: 0;
+                    width: 100%;
+                    height: 100%;
+                    background: rgba(0, 0, 0, 0.5);
+                    display: flex;
+                    align-items: center;
+                    justify-content: center;
+                    border-radius: 50%;
+                    color: white;
+
+                    .anticon {
+                        font-size: 24px;
+                    }
+                }
+            }
+        }
+
+        .user-info {
+            h2 {
+                margin-bottom: 8px;
+                font-size: 20px;
+                font-weight: 500;
+            }
+
+            p {
+                margin-bottom: 4px;
+                color: rgba(0, 0, 0, 0.65);
+            }
+        }
+    }
+
+    .info-card {
+        .ant-form-item {
+            margin-bottom: 16px;
+        }
+
+        .ant-form-item-label {
+            font-weight: 500;
+        }
+
+        .ant-input,
+        .ant-select-selector,
+        .ant-picker {
+            border-radius: 4px;
+        }
+
+        .ant-btn {
+            height: 40px;
+            padding: 0 24px;
+            font-size: 16px;
+        }
+    }
+}
+
+@media (max-width: 768px) {
+    .profile-page {
+        padding: 16px;
+
+        .profile-card {
+            margin-bottom: 24px;
+        }
+    }
+}

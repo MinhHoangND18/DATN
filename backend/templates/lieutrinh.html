@@ -1,0 +1,137 @@
+<!doctype html>
+<html lang="vi">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Liệu trình</title>
+    <style>
+      body {
+        font-family: Arial, sans-serif;
+        max-width: 800px;
+        margin: 0 auto;
+        padding: 20px;
+        line-height: 1.6;
+      }
+      .footer {
+        text-align: center;
+        margin-bottom: 20px;
+      }
+
+      .header {
+        display: flex;
+        justify-content: space-between;
+      }
+      .header h1 {
+        margin: 0;
+        font-size: 1.5em;
+        font-weight: bold;
+      }
+      .header p {
+        margin: 0;
+      }
+      .title {
+        text-align: center;
+        font-weight: bold;
+        font-size: 1.5em;
+        margin-top: 20px;
+        margin-bottom: 30px;
+      }
+      .section {
+        margin-bottom: 20px;
+      }
+
+      .section > span {
+        display: flex;
+        margin: 0;
+        padding: 0;
+      }
+      table {
+        width: 100%;
+        border-collapse: collapse;
+      }
+      table,
+      th,
+      td {
+        border: 1px solid black;
+      }
+      th,
+      td {
+        padding: 8px;
+        text-align: center;
+      }
+      .doctor-signature {
+        float: right;
+        text-align: center;
+        margin-top: 40px;
+        font-style: italic;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="header">
+      <div>
+        <h1>PHÒNG KHÁM DA LIỄU HỒNG ĐỨC</h1>
+        <p>Số 58 Nguyễn Hoàng - Mỹ Đình 2 - Nam Từ Liêm - TP. Hà Nội</p>
+        <p>Điện thoại: (024) 66813636 – 0919 268 662</p>
+        <p>Email: dalieuhongduc@gmail.com</p>
+      </div>
+      <h1>{{code}}</h1>
+    </div>
+
+    <div class="title">PHIẾU ĐIỀU TRỊ CAN THIỆP</div>
+
+    <div class="section">
+      <span>
+        <p style="width: 500px">Họ và tên: {{full_name}}</p>
+        <p>Giới tính: {{gender}}</p>
+      </span>
+
+      <span>
+        <p style="width: 500px">Số điện thoại: {{phone}}</p>
+        <p>Ngày sinh: {{birthday}}</p>
+      </span>
+      <p>Địa chỉ: {{address}}</p>
+    </div>
+
+    <div class="section">
+      <p>Chẩn đoán: {{diagnosis}}</p>
+    </div>
+
+    <div class="section">
+      <p>Phác đồ điều trị: {{treatment_regimen}}</p>
+    </div>
+
+    <div class="section">
+      <table>
+        <tr>
+          <th style="width: 10px">STT</th>
+          <th style="width: 100px">Tên liệu trình</th>
+          <th style="width: 40px">Số lượng</th>
+          <th style="width: 50px">Từ ngày</th>
+          <th style="width: 200px">Đến ngày</th>
+          <th style="width: 200px">Buồng khám</th>
+          <th style="width: 200px">Vùng</th>
+          <th style="width: 200px">Người thực hiện</th>
+        </tr>
+        {{#each lieutrinh}}
+        <tr>
+          <td>{{increment @index}}</td>
+          <td>{{this.name}}</td>
+          <td>{{this.quantity}}</td>
+          <td>{{this.start_date}}</td>
+          <td>{{this.end_date}}</td>
+          <td>{{this.clinic_room}}</td>
+          <td>{{this.area}}</td>
+          <td>{{this.doctor_name}}</td>
+        </tr>
+        {{/each}}
+      </table>
+    </div>
+
+    <div class="doctor-signature">
+      <p>Hà Nội, Ngày {{ngay}} tháng {{thang}} năm {{nam}}</p>
+      <p>Bác sĩ khám bệnh</p>
+      <p>(Ký và ghi rõ họ tên)</p>
+    </div>
+  </body>
+</html>

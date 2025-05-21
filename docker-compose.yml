@@ -1,0 +1,16 @@
+version: '3.8'
+
+services:
+  ai-service:
+    build:
+      context: ./AI
+      dockerfile: Dockerfile
+    ports:
+      - '5000:5000'
+    volumes:
+      - ./AI:/app
+      - ./data:/app/data
+    environment:
+      - FLASK_APP=app.py
+      - FLASK_ENV=development
+    restart: unless-stopped

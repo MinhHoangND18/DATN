@@ -1,0 +1,53 @@
+@import url("https://fonts.googleapis.com/css2?family=Roboto:wght@100;300;400;500;700;900&display=swap");
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Roboto", sans-serif;
+}
+
+#root {
+  height: 100vh;
+
+  ::-webkit-scrollbar {
+    width: 7px;
+    height: 7px;
+  }
+
+  /* Track */
+  ::-webkit-scrollbar-track {
+    background: #f1f1f1;
+  }
+
+  /* Handle */
+  ::-webkit-scrollbar-thumb {
+    background: #c1c1c1;
+    border-radius: 10px;
+  }
+
+  /* Handle on hover */
+  ::-webkit-scrollbar-thumb:hover {
+    background: #a8a8a8;
+  }
+}
+
+.ant-layout-content {
+  overflow: auto;
+  max-height: calc(100vh - 80px);
+  padding-right: 8px;
+}
+
+.ant-input,
+.ant-input-affix-wrapper,
+.ant-select-selector,
+.ant-picker,
+.ant-picker-input>input,
+.ant-input-number,
+.ant-input-number-input {
+  border-radius: 8px !important;
+  /* bạn có thể đổi 8px thành bao nhiêu tùy ý */
+}

@@ -1,0 +1,35 @@
+.select {
+    :global {
+
+        .ant-select-item-option-selected {
+            .ant-select-item-option-state {
+                display: none;
+            }
+        }
+
+        .ant-select-item-option-content {
+            white-space: unset !important;
+        }
+
+        .rc-virtual-list,
+        .rc-virtual-list-holder {
+            scroll-behavior: unset;
+        }
+
+        .rc-virtual-list-holder>div {
+            scroll-behavior: inherit;
+        }
+    }
+}
+
+.placeholder {
+    animation: blinker 1s linear infinite;
+    font-weight: bold;
+    color: black;
+}
+
+@keyframes blinker {
+    50% {
+        opacity: 0;
+    }
+}

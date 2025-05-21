@@ -1,0 +1,116 @@
+.root {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    :global {
+        .ant-select {
+
+            width: 100%;
+
+            &:hover {
+                .ant-select-selector {
+                    border: 1px solid #203d99 !important;
+                }
+            }
+        }
+
+        .ant-select-disabled {
+            .ant-select-arrow {
+                display: none !important;
+            }
+        }
+
+        .ant-select-focused {
+            .ant-select-selector {
+                border: 1px solid #203d99 !important;
+                box-shadow: 0px 0px 0px 2px #1890ff33 !important;
+            }
+        }
+
+        .ant-select-item {
+            font-size: 14px;
+            font-weight: 400;
+            line-height: 22px;
+
+            color: #262626;
+
+            display: flex;
+            align-items: center;
+
+            svg {
+                color: #203d99;
+            }
+        }
+
+        .ant-select-dropdown {
+            padding: 4px 0;
+        }
+
+        .ant-select-item-option-selected {
+            border-radius: unset !important;
+            font-weight: 500 !important;
+            background: #203d9914 !important;
+        }
+
+        .ant-select-selection-overflow-item {
+            .ant-select-selection-item {
+                padding: 4px 8px;
+                margin-right: 4px;
+                height: 30px !important;
+                display: flex !important;
+                align-items: center;
+                justify-content: center;
+                border: 1px solid #f0f0f0 !important;
+                background: #f5f5f5 !important;
+                color: #262626;
+            }
+        }
+
+        .ant-select-open {
+            .ant-select-arrow {
+                display: none;
+            }
+        }
+
+        .ant-select-clear {
+            margin-right: 22px;
+        }
+    }
+
+    .rowLabel {
+        display: flex;
+        margin-bottom: 8px;
+
+        .title {
+            font-size: 14px;
+            font-weight: 400;
+            line-height: 22px;
+            letter-spacing: 0em;
+            text-align: left;
+
+            color: #262626;
+            // font-family: var(--font-Roboto);
+        }
+
+        .require {
+            font-size: 14px;
+            font-weight: 400;
+            line-height: 22px;
+            letter-spacing: 0em;
+            text-align: right;
+
+            color: #f41515;
+            // font-family: var(--font-Roboto);
+        }
+    }
+
+    .loadingDiv {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        flex-direction: column;
+        height: 250px;
+    }
+}

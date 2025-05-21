@@ -1,0 +1,11 @@
+.main {
+  position: fixed;
+  width: calc(100vw - 80px);
+  right: 0;
+  padding-left: 0;
+  transition: width 0.3s;
+
+  &.sidebar-open {
+    width: calc(100vw - 250px);
+  }
+}

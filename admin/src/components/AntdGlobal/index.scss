@@ -1,0 +1,23 @@
+.ant-search-global {
+  height: 36px;
+
+  .ant-input-wrapper {
+    height: 100%;
+
+    .ant-input-affix-wrapper {
+      height: 100%;
+    }
+
+    .ant-input-group-addon {
+      .ant-btn {
+        height: 100%;
+      }
+    }
+  }
+}
+
+.select-global {
+  .ant-select-selector {
+    width: 200px !important;
+  }
+}

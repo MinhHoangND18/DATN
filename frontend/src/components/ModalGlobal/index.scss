@@ -1,0 +1,43 @@
+.modal-global {
+  border-radius: 5px;
+  .ant-modal-content {
+    border-radius: 5px;
+  }
+
+  .ant-modal-header {
+    border-radius: 5px;
+    text-align: center;
+  }
+
+  .ant-modal-footer {
+    .button-ok {
+      border-radius: 5px;
+      color: #fff;
+      background-color: #1980ff !important;
+
+      &:hover {
+        opacity: 0.7;
+      }
+    }
+
+    .button-cancel {
+      border-radius: 5px;
+
+      &:hover {
+        opacity: 0.7;
+      }
+    }
+  }
+
+  .modal-global_content {
+    max-height: 700px;
+    overflow-y: auto;
+    overflow-x: hidden;
+  }
+
+  @media only screen and (max-height: 800px) {
+    .modal-global_content {
+      max-height: 600px;
+    }
+  }
+}

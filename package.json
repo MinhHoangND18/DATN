@@ -1,0 +1,17 @@
+{
+  "name": "socks_store",
+  "version": "1.0.0",
+  "main": "index.js",
+  "scripts": {
+    "dev:fe": "npm run dev --prefix admin",
+    "dev:be": "npm run start:dev --prefix backend",
+    "install:all": "npm i && npm i --prefix backend && npm i --prefix admin"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "description": "",
+  "devDependencies": {
+    "prettier": "^3.3.3"
+  }
+}

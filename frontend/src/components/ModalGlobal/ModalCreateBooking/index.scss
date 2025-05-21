@@ -1,0 +1,27 @@
+.col-search-room {
+  div:first-child {
+    font-size: large;
+  }
+}
+
+.col-search {
+  .div-text {
+    font-size: large;
+  }
+}
+.col-email {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.col-data-search {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0 20px;
+  cursor: pointer;
+
+  background-color: rgb(192, 202, 202);
+  height: 30px;
+}
